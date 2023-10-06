@@ -44,4 +44,9 @@ alias install="sudo pacman -S"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+PATH="$BUN_INSTALL/bin:$PATH"
+
+# ruby
+PATH="$HOME/.local/share/gem/ruby/3.0.0/bin":$PATH
+
+export PATH
