@@ -36,8 +36,8 @@ NEWLINE=$'\n'
 PROMPT='%F{green}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
 
 # aliases
-alias ll="ls -l"
-alias lla="ls -la"
+alias ll="ls -l --color"
+alias lla="ls -la --color"
 alias vim="nvim"
 alias install="sudo pacman -S"
 
@@ -50,5 +50,8 @@ PATH="$BUN_INSTALL/bin:$PATH"
 
 # ruby
 PATH="$HOME/.local/share/gem/ruby/3.0.0/bin":$PATH
+
+# origen
+export ORIGEN_GEM_DIR="$HOME/origen/gems"
 
 export PATH
