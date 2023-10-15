@@ -142,14 +142,14 @@ require('lazy').setup({
     },
   },
 
-  -- {
-    -- Theme inspired by Atom
-    -- 'navarasu/onedark.nvim',
-    -- priority = 1000,
-    -- config = function()
-      -- vim.cmd.colorscheme 'onedark'
-    -- end,
-  -- },
+   {
+      -- Theme inspired by Atom
+      'navarasu/onedark.nvim',
+      priority = 1000,
+      config = function()
+        vim.cmd.colorscheme 'onedark'
+      end,
+   },
 
   {
     -- Set lualine as statusline
@@ -326,11 +326,14 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
-  
+
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
-  
+    auto_install = true,
+
     highlight = { enable = true },
+    modules = {},
+    sync_install = false,
+    ignore_install = {},
     indent = { enable = true },
     incremental_selection = {
       enable = true,
