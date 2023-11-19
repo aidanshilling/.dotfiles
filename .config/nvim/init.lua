@@ -86,7 +86,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -110,7 +110,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -128,28 +128,31 @@ require('lazy').setup({
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
-        vim.keymap.set({'n', 'v'}, ']c', function()
+        vim.keymap.set({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-        vim.keymap.set({'n', 'v'}, '[c', function()
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
 
-   {
-      -- Theme inspired by Atom
-      'navarasu/onedark.nvim',
-      priority = 1000,
-      config = function()
-        vim.cmd.colorscheme 'onedark'
-      end,
-   },
+  {
+    -- Theme
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'rose-pine'
+      -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    end,
+  },
 
   {
     -- Set lualine as statusline
@@ -158,21 +161,21 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
       },
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    main = "ibl",
-    opts = {},
-  },
+  -- {
+  --   -- Add indentation guides even on blank lines
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help indent_blankline.txt`
+  --   main = "ibl",
+  --   opts = {},
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -232,6 +235,9 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 
+-- Relative line numbers
+vim.wo.relativenumber = true
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
@@ -245,6 +251,9 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+
+-- Set tab length
+vim.o.tabstop = 2
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
