@@ -34,8 +34,8 @@ NEWLINE=$'\n'
 PROMPT='%F{green}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
 
 # aliases
-alias ll="ls -l --color"
-alias lla="ls -la --color"
+alias ll="ls -lh --color"
+alias lla="ls -lah --color"
 alias vim="nvim"
 
 
