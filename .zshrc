@@ -16,8 +16,6 @@ export LC_ALL=C
 # plugins
 source ~/.config/zsh-plugins/zsh-z/zsh-z.plugin.zsh
 
-. /opt/asdf-vm/asdf.sh
-
 # version control
 autoload -Uz vcs_info
 precmd() { vcs_info }
