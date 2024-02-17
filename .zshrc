@@ -39,19 +39,10 @@ PROMPT='%F{green}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
 alias ll="ls -l --color"
 alias lla="ls -la --color"
 alias vim="nvim"
-alias install="sudo pacman -S"
 
-# bun completions
-[ -s "/home/aidan/.bun/_bun" ] && source "/home/aidan/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-PATH="$BUN_INSTALL/bin:$PATH"
+# path
+export PATH="/opt/homebrew/bin:$PATH"
 
-# ruby
-PATH="$HOME/.local/share/gem/ruby/3.0.0/bin":$PATH
-
-# origen
-export ORIGEN_GEM_DIR="$HOME/origen/gems"
-
-export PATH
+# asdf config
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
