@@ -39,7 +39,7 @@ alias lla="ls -lah --color"
 alias vim="nvim"
 alias gvim="neovide"
 alias tmux="tmux -u"
-
+alias paci="sudo pacman -S"
 
 # path
 # export PATH="/opt/homebrew/bin:$PATH"
