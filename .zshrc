@@ -38,10 +38,11 @@ alias ll="ls -lh --color"
 alias lla="ls -lah --color"
 alias vim="nvim"
 alias gvim="neovide"
+alias tmux="tmux -u"
 
 
 # path
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
 
 # asdf config
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
