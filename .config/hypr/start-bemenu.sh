@@ -1,2 +1,2 @@
 #!/bin/bash
-bemenu-run --tf '#33aaffff' --hf '#33aaffff'
+bemenu-run -b --tf '#33aaffff' --hf '#33aaffff'
