@@ -2,6 +2,24 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Locale
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US:en" # Optional, for a list of preferred languages
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_PAPER="en_US.UTF-8"
+export LC_NAME="en_US.UTF-8"
+export LC_ADDRESS="en_US.UTF-8"
+export LC_TELEPHONE="en_US.UTF-8"
+export LC_MEASUREMENT="en_US.UTF-8"
+export LC_IDENTIFICATION="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8" # This often overrides all others, but setting them individually can be good practice.
+
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -10,8 +28,6 @@ zstyle :compinstall filename '/home/aidan/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-export LC_ALL=C
 
 # plugins
 source ~/.config/zsh-plugins/zsh-z/zsh-z.plugin.zsh
@@ -39,8 +55,9 @@ alias lla="ls -lah --color"
 alias vim="nvim"
 alias gvim="neovide"
 alias tmux="tmux -u"
-alias paci="sudo pacman -S"
+alias paci="sudo pacman -Syu"
 alias gh="cd ~"
+alias bri="brightnessctl set"
 
 # path
 # export PATH="/opt/homebrew/bin:$PATH"

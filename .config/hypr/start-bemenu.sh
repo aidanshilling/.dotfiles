@@ -1,2 +1,2 @@
 #!/bin/bash
-bemenu-run -b --tf '#33aaffff' --hf '#33aaffff'
+bemenu-run --fn "monospace 16" -H 30 -b --tf '#33aaffff' --hf '#33aaffff'
