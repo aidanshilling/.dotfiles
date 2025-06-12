@@ -20,6 +20,8 @@ export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8" # This often overrides all others, but setting them individually can be good practice.
 
+export FCEDIT="nvim"
+
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -58,6 +60,7 @@ alias tmux="tmux -u"
 alias paci="sudo pacman -Syu"
 alias gh="cd ~"
 alias bri="brightnessctl set"
+alias reload-waybar="pkill waybar && hyprctl dispatch exec waybar"
 
 # path
 # export PATH="/opt/homebrew/bin:$PATH"

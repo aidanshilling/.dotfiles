@@ -145,19 +145,20 @@
         "scroll-step": 5, // %, can be a float
         "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": " {icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "  {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "  {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
 //            "headphone": "",
 //            "hands-free": "",
-//            "headset": "",
+//            "headset": "",
 //            "phone": "",
 //            "portable": "",
 //            "car": "",
             "default": ["", "", ""]
         },
+//	"ignored-sinks": ["Family 17h/19h/1ah HD Audio Controller Speaker"],
         "on-click": "pavucontrol",
         "on-click-right": "foot -a pw-top pw-top"
     },
