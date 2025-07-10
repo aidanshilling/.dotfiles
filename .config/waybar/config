@@ -4,8 +4,17 @@
 	"spacing": 2, // Gaps between modules (4px)
 
 	// Choose the order of the modules
-	"modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
-	"modules-center": ["hyprland/window"],
+	"modules-left": [
+		"clock",
+		"tray", 
+		"hyprland/mode",
+		"hyprland/scratchpad",
+		"custom/media",
+		"hyprland/window",
+	],
+	"modules-center": [
+		"hyprland/workspaces",
+	],
 	"modules-right": [
 		"mpd", 
 		"idle_inhibitor", 
@@ -18,8 +27,7 @@
 		"keyboard-state", 
 		"battery", 
 		"battery#bat2", 
-		"tray", 
-		"clock"
+
 	],
 
 	// Modules configuration
@@ -27,16 +35,16 @@
 		"disable-scroll": true,
 		"all-outputs": true,
 		"warp-on-scroll": false,
-		"format": "{name}: {icon}",
+		"format": "{icon}",
 		"format-icons": {
-			"1": " ",
-			"2": " ",
-			"3": " ",
-			"4": " ",
-			"5": " ",
-			"urgent": " ",
-			"focused": " ",
-			"default": " "
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
 		}
 	},
 	"keyboard-state": {
