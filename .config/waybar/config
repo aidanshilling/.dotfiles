@@ -1,6 +1,6 @@
 {
     // "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     "height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     //"spacing": 4, // Gaps between modules (4px)
@@ -8,7 +8,7 @@
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     "modules-center": ["hyprland/window"],
     //"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"],
-    "modules-right": ["mpd", "idle_inhibitor", "temperature", "cpu", "memory","network", "pulseaudio", "backlight", "keyboard-state", "battery", "battery#bat2", "tray", "clock"],
+    "modules-right": ["mpd", "idle_inhibitor", "temperature", "cpu", "memory","network", "custom/specific-sink-volume", "backlight", "keyboard-state", "battery", "battery#bat2", "tray", "clock"],
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -80,8 +80,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -127,47 +127,39 @@
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": " {ifname}",
         "tooltip-format": " {ifname} via {gwaddr}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠ {ifname}",
         "format-alt": " {ifname}: {ipaddr}/{cidr}"
     },
-    "pulseaudio": {
-        "scroll-step": 5, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": " {icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+    "custom/specific-sink-volume": {
+        "format": "{}", // {} will be replaced by the script's output (JSON text field)
+        "return-type": "json", // Important: tell Waybar to expect JSON
+        "exec": "~/bin/get_sink_volume.sh", // Path to your script
+        "on-click": "pavucontrol -t 1", // Opens pavucontrol directly to the Playback tab
+        "on-scroll-up": "pactl set-sink-volume JamesDSP +5%",
+        "on-scroll-down": "pactl set-sink-volume JamesDSP -5%",
+        "tooltip": true, // Enable tooltip for the script's tooltip field
+        // Optional: you can define format-icons here if you want to use the 'percentage' field
         "format-icons": {
-//            "headphone": "",
-//            "hands-free": "",
-//            "headset": "",
-//            "phone": "",
-//            "portable": "",
-//            "car": "",
-            "default": ["", "", ""]
-        },
-//	"ignored-sinks": ["Family 17h/19h/1ah HD Audio Controller Speaker"],
-        "on-click": "pavucontrol",
-        "on-click-right": "foot -a pw-top pw-top"
+            "default": ["🔇", "🔈", "🔉", "🔊"]
+        }
     },
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
+            "spotify": " ",
             "default": "🎜"
         },
         "escape": true,
