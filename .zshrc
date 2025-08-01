@@ -55,7 +55,6 @@ PROMPT='%F{green}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
 alias ll="ls -lh --color"
 alias lla="ls -lah --color"
 alias vim="nvim"
-alias gvim="neovide"
 alias tmux="tmux -u"
 alias gh="cd ~"
 alias bri="brightnessctl set"
