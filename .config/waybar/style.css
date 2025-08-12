@@ -85,6 +85,9 @@ tooltip label{
 }
 
 #workspaces button {
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 2px;
   border-radius: 0px;
 }
 
