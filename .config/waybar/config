@@ -52,7 +52,7 @@
 
 
 "clock": {
-      "format": "{:%I:%M:%S %p}",
+      "format": "{:%I:%M:%S %p} ",
       "interval":1,
       "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "calendar-weeks-pos": "right",
@@ -127,7 +127,7 @@
 
  "disk": {
     "interval": 30,
-    "format": "  {percentage_used}%",
+    "format": " {percentage_used}%",
     "path": "/"
   },
 
@@ -143,7 +143,6 @@
   "cpu": {
       "interval": 1,
       "format": " {usage}%",
-      "min-length": 6,
       "max-length": 6,
       "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
  },

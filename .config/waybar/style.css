@@ -12,9 +12,9 @@
 }
 
 window#waybar {
-  /* background: transparent; */
-  background: rgba(0, 0, 0, 0.9);
- }
+  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+}
 
 tooltip {
   border-radius: 15px;
@@ -36,7 +36,7 @@ tooltip label{
   border-radius: 15px;
   padding: 0px 5px;
   margin: 2px 5px;
-  background: rgba(000, 000, 000, 0.8);
+  /* background: rgba(000, 000, 000, 0.8); */
 }
 
 .modules-center {
@@ -45,7 +45,6 @@ tooltip label{
   padding: 0 15px;
   margin: 2px 0px;
   border-radius: 15px 15px 15px 15px;
-  background: rgba(000, 000, 000, 0.8);
 }
 
 .modules-left {
@@ -54,7 +53,6 @@ tooltip label{
   padding: 0px 5px;
   border-radius: 15px;
   margin: 2px 5px;
-  background: rgba(000, 000, 000, 0.8);
 }
 
 #battery,
@@ -85,9 +83,9 @@ tooltip label{
 }
 
 #workspaces button {
-  margin-left: 2px;
-  margin-right: 2px;
-  padding-left: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding-left: 3px;
   border-radius: 0px;
 }
 
