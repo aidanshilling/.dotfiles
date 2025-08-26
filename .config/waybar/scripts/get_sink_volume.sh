@@ -21,7 +21,7 @@ get_sink_volume_json() {
 	    # If volume is empty, sink might not be found or active
 	    ICON=""
 	    VOLUME="N/A"
-	elif (( $(echo "$VOLUME < 30" | bc -l) )); then
+	elif (( $(echo "$VOLUME < 50" | bc -l) )); then
 	    ICON=""
 	elif (( $(echo "$VOLUME < 70" | bc -l) )); then
 	    ICON=""
@@ -29,7 +29,7 @@ get_sink_volume_json() {
 
 	# Output in JSON format for Waybar
 	# Including 'percentage' for potential format-icons in Waybar
-	echo "{\"text\": \" $VOLUME% $ICON  \", \"tooltip\": \"Volume for $TARGET_SINK\", \"percentage\": $VOLUME, \"class\": \"$MUTED\"}"
+	echo "{\"text\": \"$VOLUME% $ICON \", \"tooltip\": \"Volume for $TARGET_SINK\", \"percentage\": $VOLUME, \"class\": \"$MUTED\"}"
 }
 
 get_sink_volume_json

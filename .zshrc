@@ -58,7 +58,10 @@ alias vim="nvim"
 alias tmux="tmux -u"
 alias gh="cd ~"
 alias bri="brightnessctl set"
-alias reload-waybar="pkill waybar && hyprctl dispatch exec waybar"
+alias reload-waybar="pkill waybar && hyprctl dispatch exec waybar && pkill pactl"
+alias spotify="spotify --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias steam="steam --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias discord-canary="discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 # path
 # export PATH="/opt/homebrew/bin:$PATH"

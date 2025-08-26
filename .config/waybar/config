@@ -1,9 +1,10 @@
 {
   "layer": "top", "position": "top",
+  "spacing": 5,
   // removed weather until I get a fix
-  "modules-left": ["custom/logo", "clock", "disk", "memory", "cpu", "temperature", "custom/powerDraw", "hyprland/window" ],
-  "modules-center": [  "hyprland/workspaces"],
-  "modules-right": ["tray",  "custom/clipboard", "backlight", "idle_inhibitor", "custom/colorpicker", "bluetooth", "custom/specific-sink-volume", "pulseaudio", "network",  "battery" ],
+  "modules-left": [ "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "battery", "custom/specific-sink-volume", "bluetooth", "network"],
   "reload_style_on_change":true,
 
   "custom/logo": {
@@ -14,22 +15,25 @@
   "hyprland/workspaces": {
 	"format": "{icon}",
 	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-		"6": "",
-		"active": "",
-		"default": "" 
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"0": "0",
+		"default": "*" 
 	},
        "persistent-workspaces": {
-         "*": [ 2, 3, 4, 5, 6 ]
+         "*": [ 1, 2, 3, 4, 5 ]
        }
 },
 
 "idle_inhibitor":{
-  "format": "<span font='12'>{icon} </span>",
+  "format": "<span font='12'>{icon}</span>",
   "format-icons": {
     "activated":"󰈈",
     "deactivated":"󰈉"
@@ -52,7 +56,7 @@
 
 
 "clock": {
-      "format": "{:%I:%M:%S %p} ",
+      "format": "{:%I:%M:%S %p}",
       "interval":1,
       "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "calendar-weeks-pos": "right",
@@ -92,7 +96,7 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{capacity}% {icon} ",
+        "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄 ",
         "format-plugged": "{capacity}% 󰂄 ",
         "format-alt": "{time} {icon}",
@@ -160,8 +164,8 @@
 },
 
 "temperature": {
-  "format": " {temperatureC}°C",            
-  "format-critical": " {temperatureC}°C",
+  "format": "{temperatureC}°C",
+  "format-critical": "{temperatureC}°C",
   "interval": 1,
   "critical-threshold": 80,
   "on-click": "foot btop",
@@ -209,7 +213,7 @@
 },
 
 "tray": {
-    "icon-size": 14,
+    "icon-size": 15,
     "spacing": 10
 },
 
