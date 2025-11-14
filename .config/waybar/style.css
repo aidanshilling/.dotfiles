@@ -171,5 +171,6 @@ tooltip label{
 	background: rgba(0, 0, 0, 0.3);
 	border-top: 0px;
 	border-radius: 4px;
+	box-shadow: none;
+	text-shadow: none;
 }
-
