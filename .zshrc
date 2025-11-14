@@ -66,5 +66,9 @@ alias discord-canary="discord-canary --enable-features=UseOzonePlatform --ozone-
 # path
 # export PATH="/opt/homebrew/bin:$PATH"
 
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # asdf config
 # . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+. "$HOME/.cargo/env"

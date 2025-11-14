@@ -4,4 +4,4 @@ padding = {x = 10, y = 10}
 [colors.primary]
 background = '#000000'
 [font]
-size =16.0
+size =11.0
