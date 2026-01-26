@@ -33,6 +33,10 @@ compinit
 
 # plugins
 source ~/.config/zsh-plugins/zsh-z/zsh-z.plugin.zsh
+source ~/.fzfrc
+
+# Auth
+source ~/.config/auth.sh
 
 # version control
 autoload -Uz vcs_info
@@ -46,12 +50,12 @@ zstyle ':vcs_info:git:*' formats '%F{blue}(%b%f%F{cyan}%u%c%f%F{blue})%f '
 zstyle ':vcs_info:git:*' actionformats '%F{blue}(%b|%f%F{cyan}%u%c%f%F{blue})%f '
 
 
-# prompt
+## prompt
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
-PROMPT='%F{green}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
+PROMPT='%F{#7ccd7c}%*%f %2~ ${vcs_info_msg_0_}${NEWLINE}%F{white}%#%f '
 
-# aliases
+## aliases
 alias ll="ls -lh --color"
 alias lla="ls -lah --color"
 alias vim="nvim"
@@ -62,11 +66,14 @@ alias reload-waybar="pkill waybar && hyprctl dispatch exec waybar && pkill pactl
 alias spotify="spotify --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias steam="steam --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias discord-canary="discord-canary --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias dmon="hyprctl keyword monitor eDP-1,disable"
+alias emon="hyprctl keyword monitor eDP-1,enable"
 
-# path
-# export PATH="/opt/homebrew/bin:$PATH"
-
+## path
+# go
 export PATH="$PATH:$(go env GOPATH)/bin"
+# llvm
+export PATH="$PATH:/home/aidan/ghq/github.com/llvm/llvm-project/build/bin"
 
 # asdf config
 # . /opt/homebrew/opt/asdf/libexec/asdf.sh
